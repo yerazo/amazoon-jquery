@@ -1,0 +1,46 @@
+
+.order-form{
+  border:2px solid #ccc;
+  border-radius:10px;
+  margin-bottom:15px;
+  padding:30px 15%;
+}
+.form-group{
+  margin-bottom:25px;
+}
+.form-group label{
+  font-size:18px;
+}
+.gift-group{
+  padding-left:10px;
+}
+.gift-group strong{
+  font-size:18px;
+}
+.shipping-group{
+  text-align:center;
+  margin-bottom:25px;
+}
+.shipping-group label{
+  font-size:18px;
+  margin-right:10px;
+}
+.submit{
+  text-align:center;
+}
+.has-error label{
+  color:red;
+}
+.has-error .form-control{
+  border-color:red;
+}
+.error-message{
+  text-align:center;
+  padding:20px;
+  border-radius:6px;
+  background-color:rgba(255,0,0,0.8);
+  margin-bottom:25px;
+  color:white;
+  font-size:18px;
+  display:none;
+}

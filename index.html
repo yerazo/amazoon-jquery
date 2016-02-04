@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amazoon</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="An awesome Amazon clone!">
+  <meta name="keywords" content="amazon, shopping cart, checkout system">
+  <meta name="author" content="Batch Academy">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.4/css/bootstrap-select.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/cart.css">
+</head>
+<body>
+  <header class="container-fluid navy-blue-background">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Amazoon logo">
+    </div>
+    <nav>
+      <a href="checkout.html" class="btn btn-default btn-orange">
+        <span class="hidden-xs">Proceed to checkout</span>
+        <span class="visible-xs-inline">Checkout</span>
+      </a>
+    </nav>
+  </header>
+
+  <template id="product">
+    <div class="row product" data-price="0.00">
+      <div class="col-xs-12 col-sm-10">
+        <div class="row">
+          <div class="col-xs-4 image">
+            <img src="productXX.jpg">
+          </div>
+          <div class="col-xs-8 content">
+            <h2 class="blue">Product Name<span class="manufacturer"> by Manufacturer</span></h2>
+            <h3>Description</h3>
+            <a class="blue move">Save for later</a>
+            <span class="visible-xs-inline mobile-price red">$0.00</span>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs col-sm-2">
+        <div class="price red">
+          $0.00
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <main class="container-fluid">
+    <h1 class="orange">Your Shopping Cart</h1>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+
+        <div class="row headers hidden-xs">
+          <div class="col-xs-10">
+            Item
+          </div>
+          <div class="col-xs-2">
+            Price
+          </div>
+        </div>
+
+        <div class="cart">
+          <h2 class="empty">You have no items in your cart.</h2>
+        </div>
+
+        <div class="cart-total">
+          Total Cart: <span class="red">$89.99</span>
+        </div>
+
+        <h1 class="orange">Saved for later</h1>
+
+        <div class="row headers hidden-xs">
+          <div class="col-xs-10">
+            Item
+          </div>
+          <div class="col-xs-2">
+            Price
+          </div>
+        </div>
+
+        <div class="saved">
+          <h2 class="empty">You have no items saved for later.</h2>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="container-fluid navy-blue-background">
+    <img src="assets/images/logo.png" alt="Amazoon logo" width="150"><br>
+    <em>Putting the extra o in Amazon.</em>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.4/js/bootstrap-select.min.js"></script>
+  <script src="assets/js/cart.js"></script>
+</body>
+</html>

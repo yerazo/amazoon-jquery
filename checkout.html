@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amazoon</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="An awesome Amazon clone!">
+  <meta name="keywords" content="amazon, shopping cart, checkout system">
+  <meta name="author" content="Batch Academy">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.4/css/bootstrap-select.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/checkout.css">
+</head>
+<body>
+  <header class="container-fluid navy-blue-background">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Amazoon logo">
+    </div>
+    <nav>
+      <a href="index.html" class="btn btn-default btn-orange">Back to cart</a>
+    </nav>
+  </header>
+
+  <main class="container-fluid">
+    <h1 class="orange">Checkout</h1>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="error-message">Please fill out the required fields!</div>
+
+        <!-- See the "novalidate" attribute on the <form>? This tells the web browser we want to handle the validation of the form on our own. Take away the attribute and try submitting the form to see how the browser handles validation (and then put it back!) -->
+
+        <form class="order-form" novalidate>
+
+          <div class="row">
+            <div class="shipping-group form-group col-xs-12">
+              <label>Shipping speed:</label>
+              <select class="selectpicker" name="shipping" data-width="100%">
+                <option>FREE Shipping (5-8 Days)</option>
+                <option>Standard Shipping (4-7 Days)</option>
+                <option>Expedited Shipping (3-4 Days)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-xs-12 col-sm-6">
+              <label>Full name:</label>
+              <input type="text" class="form-control" required name="full-name" placeholder="John Doe">
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+              <label>Email address:</label>
+              <input type="email" class="form-control" required name="email" placeholder="john.doe@gmail.com">
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="form-group col-xs-12 col-sm-6">
+              <label>Address:</label>
+              <input type="text" class="form-control" required name="address" placeholder="123 Red Road">
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+              <label>Address #2:</label>
+              <input type="text" class="form-control" name="address2" placeholder="Apt. 1304">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-xs-12 col-sm-6">
+              <label>City:</label>
+              <input type="text" class="form-control" required name="city" placeholder="New York">
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+              <label>Zip code:</label>
+              <input type="text" class="form-control" required name="zipcode" placeholder="10026">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-xs-12 col-sm-6">
+              <label>State:</label>
+              <input type="text" class="form-control" required name="state" placeholder="New York">
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+              <label>Country:</label>
+               <select class="selectpicker" required name="country" data-width="100%">
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+              </select>
+            </div>
+          </div>
+          <hr>
+            <div class="gift-group">
+              <strong>Giving the gift of a box?</strong>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="gift"> This order is a gift
+                </label>
+              </div>
+            </div>
+          <hr>
+          <div class="submit">
+            <button type="submit" class="btn btn-default btn-orange">Place Order</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container-fluid navy-blue-background">
+    <img src="assets/images/logo.png" alt="Amazoon logo" width="150"><br>
+    <em>Putting the extra o in Amazon.</em>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.4/js/bootstrap-select.min.js"></script>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>
