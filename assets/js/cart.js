@@ -22,7 +22,19 @@ $(document).ready(function(){
         price: 109.99
       }
     ];
+    var productTemplate = $('template#product').html();
+    for(var i = 0; i < products.length; i++){
+      var newProduct = $(productTemplate);
 
-    // Get started here!
+      $('h2', newProduct).text(products[i].name);
+      var newManufacturer = $('<span/>').addClass('manufacturer').text('by' + products[i].manufacturer)
+      $('h2', newProduct).append(newManufacturer);
+      $('.image img', newProduct).attr('src', products[i].imageSrc);
+      $('h3'. newProduct).text(products[i].description);
+      $('.price', newProduct).text('$' + products[i].price)
+      
+
+      $('.cart').append(newProduct);
+    }
 
   });
