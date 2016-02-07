@@ -32,9 +32,18 @@ $(document).ready(function(){
       $('.image img', newProduct).attr('src', products[i].imageSrc);
       $('h3'. newProduct).text(products[i].description);
       $('.price', newProduct).text('$' + products[i].price)
+
       
 
       $('.cart').append(newProduct);
     }
+    var products = $('.product .product');
+    var total = 0;
+      $(products).each(function(){
+        total += Number($(this).data('price'));
 
+        $('cart-total').append(total);
+      });
+      
   });
+
