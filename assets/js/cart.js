@@ -37,13 +37,17 @@ $(document).ready(function(){
 
       $('.cart').append(newProduct);
     }
-    var products = $('.product .product');
-    var total = 0;
-      $(products).each(function(){
-        total += Number($(this).data('price'));
+    $('.product .content .move').on('click', function(){
+      $(this).parents().eq(3).appendTo('.saved');
+    });
+    // updateView
+    // var products = $('.product .price');
+    // var total = 0;
+    //   $(products).each(function(){
+    //     total += Number($(this).data('price'));
 
-        $('cart-total').append(total);
-      });
+    //     $('cart-total').append(total);
+    //   });
       
   });
 

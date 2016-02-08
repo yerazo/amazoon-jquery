@@ -1,3 +1,5 @@
 $(document).ready(function(){
-  // Get started here!
+  $('.form-control').on('submit', function(event){
+  	event.preventDefault();
+  });
 });
