@@ -39,15 +39,18 @@ $(document).ready(function(){
     }
     $('.product .content .move').on('click', function(){
       $(this).parents().eq(3).appendTo('.saved');
-    });
-    // updateView
-    // var products = $('.product .price');
-    // var total = 0;
-    //   $(products).each(function(){
-    //     total += Number($(this).data('price'));
+      $(this).text('Add to Cart');
 
-    //     $('cart-total').append(total);
-    //   });
-      
+    });
+    function updateView(){
+    var products = $('.product');
+    var total = 0;
+      $(products).each(function(){
+        total += Number($(this).data('price'));
+
+      });
+        console.log(total);
+    }
+    updateView();
   });
 
