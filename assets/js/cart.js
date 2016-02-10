@@ -27,34 +27,50 @@ $(document).ready(function(){
       var newProduct = $(productTemplate);
 
       $('h2', newProduct).text(products[i].name);
-      var newManufacturer = $('<span/>').addClass('manufacturer').text('by' + products[i].manufacturer)
+      var newManufacturer = $('<span/>').addClass('manufacturer').text('by' + products[i].manufacturer);
       $('h2', newProduct).append(newManufacturer);
       $('.image img', newProduct).attr('src', products[i].imageSrc);
-      $('h3'. newProduct).text(products[i].description);
-      $('.price', newProduct).text('$' + products[i].price);
-      $('.mobile-price', newProduct).text('$' + products[i].price);
+      $('h3', newProduct).text(products[i].description);
+      $('.price, .mobile-price', newProduct).text('$' + products[i].price.toFixed(2));
+      
       $(newProduct).data('price', products[i].price)
 
       
-
       $('.cart').append(newProduct);
     }
 
     var updateView = function(){
-      var products = $('.product', '.cart');
+      var productsInCart = $('.cart .product');
+      var productsSaved = $('.saved .product');
+
+      if(productsInCart.length === 0){
+        $('.cart .empty').show();
+        $('.cart-total').hide();
+      } else {
+        $('.cart .empty').hide();
+        $('.cart-total').show();
+      }
+
+      if(productsSaved.length === 0){
+        $('.saved .empty').show();
+      } else {
+        $('.saved .empty').hide();
+      }
+
+      
       var total = 0;
-      $(products).each(function(){
+      $(productsInCart).each(function(){
         total += Number($(this).data('price'));
 
       });
-      console.log(total);
+      $('.cart-total span').text('$' + total.toFixed(2));
     }
     $('.move').on('click', function(){
       if($(this).parents().eq(4).hasClass('saved')){
-        $(this).parents().eq(3).appendTo('.cart');
+        $(this).parents().eq(3).prependTo('.cart');
         $(this).text('Save for Later');
       } else {
-        $(this).parents().eq(3).appendTo('.saved');
+        $(this).parents().eq(3).prependTo('.saved');
         $(this).text('Add to Cart');
       }
 
