@@ -33,33 +33,34 @@ $(document).ready(function(){
       $('h3'. newProduct).text(products[i].description);
       $('.price', newProduct).text('$' + products[i].price);
       $('.mobile-price', newProduct).text('$' + products[i].price);
-      $('.data-price', newProduct).text(products[i].price)
+      $(newProduct).data('price', products[i].price)
 
       
 
       $('.cart').append(newProduct);
     }
+
+    var updateView = function(){
+      var products = $('.product', '.cart');
+      var total = 0;
+      $(products).each(function(){
+        total += Number($(this).data('price'));
+
+      });
+      console.log(total);
+    }
     $('.move').on('click', function(){
-      console.log($(this).parents());
       if($(this).parents().eq(4).hasClass('saved')){
         $(this).parents().eq(3).appendTo('.cart');
         $(this).text('Save for Later');
       } else {
         $(this).parents().eq(3).appendTo('.saved');
-        console.log('move me to the saved for later')
         $(this).text('Add to Cart');
       }
 
+    updateView();
     });
-    function updateView(){
-    var products = $('.product');
-    var total = 0;
-      $(products).each(function(){
-        total += Number($(this).data('price'));
 
-      });
-        console.log(total);
-    }
     updateView();
   });
 
