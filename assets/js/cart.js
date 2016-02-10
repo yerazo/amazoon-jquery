@@ -31,15 +31,24 @@ $(document).ready(function(){
       $('h2', newProduct).append(newManufacturer);
       $('.image img', newProduct).attr('src', products[i].imageSrc);
       $('h3'. newProduct).text(products[i].description);
-      $('.price', newProduct).text('$' + products[i].price)
+      $('.price', newProduct).text('$' + products[i].price);
+      $('.mobile-price', newProduct).text('$' + products[i].price);
+      $('.data-price', newProduct).text(products[i].price)
 
       
 
       $('.cart').append(newProduct);
     }
-    $('.product .content .move').on('click', function(){
-      $(this).parents().eq(3).appendTo('.saved');
-      $(this).text('Add to Cart');
+    $('.move').on('click', function(){
+      console.log($(this).parents());
+      if($(this).parents().eq(4).hasClass('saved')){
+        $(this).parents().eq(3).appendTo('.cart');
+        $(this).text('Save for Later');
+      } else {
+        $(this).parents().eq(3).appendTo('.saved');
+        console.log('move me to the saved for later')
+        $(this).text('Add to Cart');
+      }
 
     });
     function updateView(){
