@@ -1,12 +1,23 @@
 $(document).ready(function(){
-  $('.form-control').on('submit', function(event){
+  $('.order-form').on('submit', function(){
   	event.preventDefault();
-  });
-  var requiredFields = $('input[required]');
+  	$('input[required]').parent().removeClass('has-error')
+  	$('.error-message').hide();
+  
+  	var isValid = true;
+	$('input[required]').each(function(){
+	  	if($(this).val().length === 0){
+	  		$(this).parent().addClass('has-error');
+	  		isValid = false;
+		} 
+ 	});
 
-  $(requiredFields).each(function(){
-  	for(var i = 0; i < requiredFields.length; i++){
-  		console.log();
+  	if(isValid){
+  		alert("Congrats");
+  	} else {
+  		$('.error-message').show();
   	}
-  });
+ 
+ });
 });
+
