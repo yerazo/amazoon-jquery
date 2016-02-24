@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $.get('http://portal.batchacademy.com/api/wdfne/amazoon-products', function(products){
+  $.get('https://portal.batchacademy.com/api/wdfne/amazoon-products', function(products){
 
     var productTemplate = $('template#product').html();
     for(var i = 0; i < products.length; i++){
